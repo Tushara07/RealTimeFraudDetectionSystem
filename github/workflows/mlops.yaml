@@ -1,0 +1,27 @@
+name: Fraud MLOps Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.10
+
+    - run: pip install -r requirements.txt
+
+    # Step 1: Data pipeline
+    - run: python src/data_loader.py
+
+    # Step 2: Train model
+    - run: python src/train.py
+
+    # Step 3: Test inference
+    - run: python src/predict.py --input data/processed/final_dataset.csv
