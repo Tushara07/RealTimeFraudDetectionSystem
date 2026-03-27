@@ -184,3 +184,12 @@ Tushara
 
 IEEE-CIS Fraud Detection Dataset
 Open-source machine learning community
+
+---
+
+
+## Dataset
+
+Due to GitHub size limitations, datasets are not included in this repository.
+You can download the dataset from:
+https://www.kaggle.com/competitions/ieee-fraud-detection
